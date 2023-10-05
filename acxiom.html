@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Welcome, <span id="username">Username</span>!</h1>
+    <body>
+        <div class="login-container">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">submit </button>               <button type="reset">reset now </button>
+            </div>
+        </div>
+        <title>Reminders</title>
+   
+
+<body>
+    <h1>Reminders<h1></h1>
+    <div>
+        <label for="reminder">Set Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="setReminder()">Set</button>
+    </div>
+    <div>
+        <label for="reminder">Modify Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="modifyReminder()">Modify</button>
+    </div>
+    <div>
+        <label for="reminder">Disable Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="disableReminder()">Disable</button>
+    </div>
+    <div>
+        <label for="reminder">Delete Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="deleteReminder()">Delete</button>
+    </div>
+    <div>
+        <label for="reminder">Enable Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="enableReminder()">Enable</button>
+    </div>
+    <div>
+        <label for="reminder">View Reminder:</label>
+        <input type="text" id="reminder">
+        <button onclick="viewReminder()">View</button>
+    </div>
+
+    <div id="reminders">
+        <!-- Reminders will be displayed here -->
+    </div>
+
+    <script>
+        function setReminder() {
+            var reminderText = document.getElementById('reminder').value;
+            if (reminderText === '') {
+                alert('Please enter a reminder.');
+                return;
+            }
+            var reminderItem = document.createElement('div');
+            reminderItem.textContent = reminderText;
+            document.getElementById('reminders').appendChild(reminderItem);
+        }
+
+        function deleteReminder() {
+            var reminders = document.getElementById('reminders');
+            reminders.removeChild(reminders.lastChild);
+        }
+
+        function disableReminder() {
+            var reminders = document.getElementById('reminders').children;
+            if (reminders.length > 0) {
+                var lastReminder = reminders[reminders.length - 1];
+                lastReminder.style.textDecoration = 'line-through';
+            }
+        }
+    </script>
+</body>
+    </body>
+</body>
+
+</html>
